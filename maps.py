@@ -111,6 +111,23 @@ def two_point_enter(first_point,second_point):
     return total
 
 
-time.sleep(10)
+# Liste içinde verilen bütün 2 noktalı konumları dk ve km cinsinden değerlerini maps çekicektir.
+# verilen bilgi =[1.konum,2.konum]
+# alınan bilgi = [1.konum,2.konum,süre(dk_cinsinden),mesafe(km cinsinden)]
+# çıktıyı liste halinde vericektir.
+
+def dowload_maps(area):
+    # sadece iki nokta mesafe ve saat bilgisini vericek.
+    update_list=list()
+    button_click()
+    for inside in area:
+        i=inside[0]
+        j=inside[1]
+        data=two_point_enter(i,j)
+        update_list.append(data)
+    return update_list
+
+
+
 
 driver_edge.quit()
